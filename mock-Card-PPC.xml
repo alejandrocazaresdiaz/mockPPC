@@ -1,0 +1,2060 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="9122a6f5-ef0b-4a97-b474-483a97d9e27b" activeEnvironment="Default" name="mockCardPPC" resourceRoot="" defaultScriptLanguage="Groovy" soapui-version="5.8.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:restMockService id="fb9c82fe-f42d-4049-94e0-0ec0ef3ef6de" port="8080" path="/" host="DAR90387590L" name="inicioSesionAbonos"><con:settings/><con:properties/><con:restMockAction name="/omnicanal/api/v1/inicioSesionAbonos" method="POST" resourcePath="/omnicanal/api/v1/inicioSesionAbonos" id="6e56369c-d2aa-4372-8d57-5bef477b948f"><con:settings/><con:defaultResponse>SUCCESS</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>// Match based on body
+def requestBody = mockRequest.getRequestContent()
+log.info "Request body: " + requestBody
+
+if( requestBody.contains("00000") )
+{
+    // return the name of the response you want to dispatch
+    return "ERROR"
+}else if(requestBody.contains("111109")){
+    return "cuentas9"
+}else if(requestBody.contains("111012")){
+    return "cuentas12"
+}else if(requestBody.contains("111053")){
+    return "cuentas53"
+}else if(requestBody.contains("111010")){
+    return "cuentas10"
+}else if(requestBody.contains("111011")){
+    return "cuentas11"
+}else if(requestBody.contains("111103")){
+    return "cuentas3"
+}else if(requestBody.contains("111101")){
+    return "variasconPPC"
+}else if(requestBody.contains("111102")){
+    return "variasSinPPC"
+}else if(requestBody.contains("111106")){
+    return "variasconPPCVencido"
+}else if(requestBody.contains("111104")){
+    return "PrestamoVencido"
+}else if(requestBody.contains("111105")){
+    return "Prestamo"
+}
+</con:dispatchPath><con:response name="ERROR" id="9cda8f3e-4575-4937-8bae-de9da14e893a" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":{
+            "hostname": "iniciosesionabonos-77bf569c97-74qlz",
+            "code": -50,
+            "errorCode": -50,
+            "userMessage": "Autenticación Fallida"
+        }
+    
+    },
+    "meta":{
+        "id_transaction": "687a10d0-bad6-48ec-be2d-b11b8911325c",
+        "status": "ERROR",
+        "time_elapsed": 0.12662744522094727
+    }
+}</con:responseContent></con:response><con:response name="SUCCESS" id="c140b28e-ebe0-4e4c-bd76-87f3ee40eb95" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":
+        {
+            "channel": true,
+            "nombre": "",
+            "tipoCliente": 2,
+            "cliente": 2744155,
+            "app": "bex",
+            "token":"5efa12ade99a7babce66acac2f61488e36631d300dca47d89f8e7368e5fee4f2",
+            "platform": "",
+            "versionApp": "",
+            "traceability_id": "66708ff7bae21ef96946bed6"
+        }
+    
+    },
+    "meta":    
+    {
+        "id_transaction": "4845695d-70fc-4af2-ae0c-3b258376bfdd",
+        "status": "SUCCESS",
+        "time_elapsed": 0.32446837425231934
+    }
+}</con:responseContent></con:response><con:response name="cuentas9" id="85b20bb9-ba6a-4a94-9bd7-e251bcbaf765" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":{
+            "channel": true,
+            "nombre": "",
+            "tipoCliente": 2,
+            "cliente": 2744155,
+            "app": "canal_distribuido",
+            "token": "9-9-9-9",
+            "platform": "",
+            "versionApp": "",
+            "traceability_id": "66708ff7bae21ef96946bed6"
+        }
+    
+    },
+    "meta": {
+        "id_transaction": "4845695d-70fc-4af2-ae0c-3b258376bfdd",
+        "status": "SUCCESS",
+        "time_elapsed": 0.32446837425231934
+    }
+}</con:responseContent></con:response><con:response name="cuentas12" id="c38e999e-9152-4c1d-b8bc-f7086e3fea8b" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":{
+            "channel": true,
+            "nombre": "",
+            "tipoCliente": 2,
+            "cliente": 2744155,
+            "app": "canal_distribuido",
+            "token": "12-12-12-12",
+            "platform": "",
+            "versionApp": "",
+            "traceability_id": "66708ff7bae21ef96946bed6"
+        }
+    
+    },
+    "meta": {
+        "id_transaction": "4845695d-70fc-4af2-ae0c-3b258376bfdd",
+        "status": "SUCCESS",
+        "time_elapsed": 0.32446837425231934
+    }
+}</con:responseContent></con:response><con:response name="cuentas53" id="3e38c4fd-ad00-47e6-8390-a0fb81ee8975" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":{
+            "channel": true,
+            "nombre": "",
+            "tipoCliente": 2,
+            "cliente": 2744155,
+            "app": "canal_distribuido",
+            "token": "53-53-53-53",
+            "platform": "",
+            "versionApp": "",
+            "traceability_id": "66708ff7bae21ef96946bed6"
+        }
+    
+    },
+    "meta": {
+        "id_transaction": "4845695d-70fc-4af2-ae0c-3b258376bfdd",
+        "status": "SUCCESS",
+        "time_elapsed": 0.32446837425231934
+    }
+}</con:responseContent></con:response><con:response name="cuentas10" id="502b5a2d-adef-460f-b532-3fb419531946" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":{
+            "channel": true,
+            "nombre": "",
+            "tipoCliente": 2,
+            "cliente": 2744155,
+            "app": "canal_distribuido",
+            "token": "10-10-10-10",
+            "platform": "",
+            "versionApp": "",
+            "traceability_id": "66708ff7bae21ef96946bed6"
+        }
+    
+    },
+    "meta": {
+        "id_transaction": "4845695d-70fc-4af2-ae0c-3b258376bfdd",
+        "status": "SUCCESS",
+        "time_elapsed": 0.32446837425231934
+    }
+}</con:responseContent></con:response><con:response name="cuentas11" id="07761025-29a9-4b75-a5bd-be2d5f1d1e1b" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":{
+            "channel": true,
+            "nombre": "",
+            "tipoCliente": 2,
+            "cliente": 2744155,
+            "app": "canal_distribuido",
+            "token": "11-11-11-11",
+            "platform": "",
+            "versionApp": "",
+            "traceability_id": "66708ff7bae21ef96946bed6"
+        }
+    
+    },
+    "meta": {
+        "id_transaction": "4845695d-70fc-4af2-ae0c-3b258376bfdd",
+        "status": "SUCCESS",
+        "time_elapsed": 0.32446837425231934
+    }
+}</con:responseContent></con:response><con:response name="cuentas3" id="b7a63cb1-f0ec-4d8d-a58f-0897ee9e9fdb" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":{
+            "channel": true,
+            "nombre": "",
+            "tipoCliente": 2,
+            "cliente": 2744155,
+            "app": "canal_distribuido",
+            "token": "3-3-3-3",
+            "platform": "",
+            "versionApp": "",
+            "traceability_id": "66708ff7bae21ef96946bed6"
+        }
+    
+    },
+    "meta": {
+        "id_transaction": "4845695d-70fc-4af2-ae0c-3b258376bfdd",
+        "status": "SUCCESS",
+        "time_elapsed": 0.32446837425231934
+    }
+}</con:responseContent></con:response><con:response name="variasconPPC" id="bfd15160-104f-4265-805a-b0444e872499" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":{
+            "channel": true,
+            "nombre": "",
+            "tipoCliente": 2,
+            "cliente": 2744155,
+            "app": "canal_distribuido",
+            "token": "11111-11111-11111-11111",
+            "platform": "",
+            "versionApp": "",
+            "traceability_id": "66708ff7bae21ef96946bed6"
+        }
+    
+    },
+    "meta": {
+        "id_transaction": "4845695d-70fc-4af2-ae0c-3b258376bfdd",
+        "status": "SUCCESS",
+        "time_elapsed": 0.32446837425231934
+    }
+}</con:responseContent></con:response><con:response name="variasSinPPC" id="a35b2ae9-314f-44fa-b477-27194d953d7e" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":{
+            "channel": true,
+            "nombre": "",
+            "tipoCliente": 2,
+            "cliente": 2744155,
+            "app": "canal_distribuido",
+            "token": "22222-22222-22222-22222",
+            "platform": "",
+            "versionApp": "",
+            "traceability_id": "66708ff7bae21ef96946bed6"
+        }
+    
+    },
+    "meta": {
+        "id_transaction": "4845695d-70fc-4af2-ae0c-3b258376bfdd",
+        "status": "SUCCESS",
+        "time_elapsed": 0.32446837425231934
+    }
+}</con:responseContent></con:response><con:response name="variasconPPCVencido" id="b7644589-cbb8-44f9-9b88-4d6d93982688" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":{
+            "channel": true,
+            "nombre": "",
+            "tipoCliente": 2,
+            "cliente": 2744155,
+            "app": "canal_distribuido",
+            "token": "33333-33333-33333-33333",
+            "platform": "",
+            "versionApp": "",
+            "traceability_id": "66708ff7bae21ef96946bed6"
+        }
+    
+    },
+    "meta": {
+        "id_transaction": "4845695d-70fc-4af2-ae0c-3b258376bfdd",
+        "status": "SUCCESS",
+        "time_elapsed": 0.32446837425231934
+    }
+}</con:responseContent></con:response><con:response name="PrestamoVencido" id="86f66014-c952-4651-a49f-d0804f7b3ca4" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":{
+            "channel": true,
+            "nombre": "",
+            "tipoCliente": 2,
+            "cliente": 2744155,
+            "app": "canal_distribuido",
+            "token": "44444-44444-44444-44444",
+            "platform": "",
+            "versionApp": "",
+            "traceability_id": "66708ff7bae21ef96946bed6"
+        }
+    
+    },
+    "meta": {
+        "id_transaction": "4845695d-70fc-4af2-ae0c-3b258376bfdd",
+        "status": "SUCCESS",
+        "time_elapsed": 0.32446837425231934
+    }
+}</con:responseContent></con:response><con:response name="Prestamo" id="028f19d7-d0ef-43a9-b27b-559c7597353d" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":{
+            "channel": true,
+            "nombre": "",
+            "tipoCliente": 2,
+            "cliente": 2744155,
+            "app": "canal_distribuido",
+            "token": "55555-55555-55555-55555",
+            "platform": "",
+            "versionApp": "",
+            "traceability_id": "66708ff7bae21ef96946bed6"
+        }
+    
+    },
+    "meta": {
+        "id_transaction": "4845695d-70fc-4af2-ae0c-3b258376bfdd",
+        "status": "SUCCESS",
+        "time_elapsed": 0.32446837425231934
+    }
+}</con:responseContent></con:response></con:restMockAction></con:restMockService><con:restMockService id="90014214-fcfa-426e-ae7f-b803e4ea298e" port="8080" path="/" host="DAR90387590L" name="consultarCuentas"><con:settings/><con:properties/><con:restMockAction name="/omnicanal/api/v1/consultarCuentas" method="POST" resourcePath="/omnicanal/api/v1/consultarCuentas" id="adbd7808-17cc-4d69-9271-ad485c52612e"><con:settings/><con:defaultResponse>variasconPPC</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>def authorizationHeader = mockRequest.getRequestHeaders().get("Authorization")
+log.info "Authorization: " + authorizationHeader
+
+if( authorizationHeader.contains("9-9-9-9") )
+{
+    // return the name of the response you want to dispatch
+    return "ERROR9"
+}else if(authorizationHeader.contains("12-12-12-12")){
+    return "ERROR12"
+}else if(authorizationHeader.contains("53-53-53-53")){
+    return "ERROR53"
+}else if(authorizationHeader.contains("10-10-10-10")){
+    return "ERROR10"
+}else if(authorizationHeader.contains("11-11-11-11")){
+    return "ERROR11"
+}else if(authorizationHeader.contains("3-3-3-3")){
+    return "ERROR3"
+}else if(authorizationHeader.contains("11111-11111-11111-11111")){
+    return "variasconPPC"
+}else if(authorizationHeader.contains("22222-22222-22222-22222")){
+    return "variasSinPPC"
+}else if(authorizationHeader.contains("33333-33333-33333-33333")){
+    return "variasconPPCVencido"
+}else if(authorizationHeader.contains("44444-44444-44444-44444")){
+    return "PrestamoVencido"
+}else if(authorizationHeader.contains("55555-55555-55555-55555")){
+    return "Prestamo"
+}</con:dispatchPath><con:response name="ERROR9" id="a0d10cb1-c278-4899-b937-2145af999e56" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":{
+            "hostname": "consultarcuentas-764c69475b-zpjgv",
+            "code": -9,
+            "errorCode": -9,
+            "userMessage": "CLIENTE INVALIDO"
+        }    
+    },
+    "meta":{
+        "id_transaction": "68026195-dd0e-453d-9a35-cb717d1f4921",
+        "status": "ERROR",
+        "time_elapsed": 0.1386871337890625
+    }
+}</con:responseContent></con:response><con:response name="ERROR12" id="5410bb8d-3218-4d0c-beef-f0f06bb5d663" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":{
+            "hostname": "consultarcuentas-764c69475b-zpjgv",
+            "code": -12,
+            "errorCode": -12,
+            "userMessage": "Transaccion ya ejecutada anteriormente"
+        }    
+    },
+    "meta":{
+        "id_transaction": "68026195-dd0e-453d-9a35-cb717d1f4921",
+        "status": "ERROR",
+        "time_elapsed": 0.1386871337890625
+    }
+}</con:responseContent></con:response><con:response name="ERROR53" id="c46aba2e-e4e2-4667-bf34-c2fbe4e3490f" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":{
+            "hostname": "consultarcuentas-764c69475b-zpjgv",
+            "code": -53,
+            "errorCode": -53,
+            "userMessage": "No se encontraron abonos"
+        }    
+    },
+    "meta":{
+        "id_transaction": "68026195-dd0e-453d-9a35-cb717d1f4921",
+        "status": "ERROR",
+        "time_elapsed": 0.1386871337890625
+    }
+}</con:responseContent></con:response><con:response name="ERROR10" id="a4e31512-03e8-4d36-b36b-eeb488cec7a0" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":{
+            "hostname": "consultarcuentas-764c69475b-zpjgv",
+            "code": -10,
+            "errorCode": -10,
+            "userMessage": "CLIENTE NO TIENE CUENTAS"
+        }    
+    },
+    "meta":{
+        "id_transaction": "68026195-dd0e-453d-9a35-cb717d1f4921",
+        "status": "ERROR",
+        "time_elapsed": 0.1386871337890625
+    }
+}</con:responseContent></con:response><con:response name="ERROR11" id="2e26934a-9914-4c0b-9d60-4b7dbf0dd892" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":{
+            "hostname": "consultarcuentas-764c69475b-zpjgv",
+            "code": -11,
+            "errorCode": -11,
+            "userMessage": "No se encontro el folio de abono"
+        }    
+    },
+    "meta":{
+        "id_transaction": "68026195-dd0e-453d-9a35-cb717d1f4921",
+        "status": "ERROR",
+        "time_elapsed": 0.1386871337890625
+    }
+}</con:responseContent></con:response><con:response name="ERROR3" id="5742a324-ce6f-4920-af61-4d20d13014bf" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":{
+            "hostname": "consultarcuentas-764c69475b-zpjgv",
+            "code": -3,
+            "errorCode": -3,
+            "userMessage": "Metodo no permitido"
+        }    
+    },
+    "meta":{
+        "id_transaction": "68026195-dd0e-453d-9a35-cb717d1f4921",
+        "status": "ERROR",
+        "time_elapsed": 0.1386871337890625
+    }
+}</con:responseContent></con:response><con:response name="variasconPPC" id="20f3ce5d-c8f4-4f96-8b86-1c16db092cdf" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "response": {
+      "data": {
+        "response": {
+          "folioAbono": "2503106609000160306",
+          "numeroCliente": 90294695,
+          "nombreCliente": "YESENIA LEONEL VERA",
+          "puntualidad": "A",
+          "cuentas": [
+            {
+              "tipoCuenta": 0,
+              "saldo": 3246,
+              "interesAdicional": 0,
+              "abonoBase": 360,
+              "vencido": 0,
+              "minimo": 360,
+              "bonificacion": 598,
+              "interesPrimerMes": 0,
+              "saldaCon": 2648,
+              "fechaSaldaCon": "2025-03-10",
+              "factura": 0,
+              "importeVenta": 0,
+              "descripcion": "ROPA",
+              "tienda": 0,
+              "fechaUltimoMovimiento": "2025-02-16",
+              "fechaUltimaCompra": "2024-11-17",
+              "plazo": 12,
+              "tipoProducto": 0,
+              "saldoTeorico": 3246,
+              "folioOrdenamiento": 1,
+              "importePrestamo": 0,
+              "flagCuentaPerdida": 0,
+              "porcentajeInteres": 3900,
+              "refacturacion": 1,
+              "saldoMesAnterior": 3246,
+              "importeInteres": 1209,
+              "saldaConCorte": 0,
+              "diasTranscurridos": 0,
+              "porcentajeBonificacionPrestamo": 0,
+              "porcentajeBonificacion": 4953,
+              "interesSobreCompra": 0,
+              "CuentasDetalle": [
+                {
+                  "saldoDetalle": 3246,
+                  "interesAdicionalDetalle": 0,
+                  "tipoDeduccionDetalle": 0,
+                  "fechaUltimaCompraDetalle": "2024-11-17",
+                  "saldoctaperdida": 0,
+                  "interesadicionalctaperdida": 0,
+                  "tipodeduccionctaperdida": 0
+                }
+              ],
+              "saldoalafecha": 0,
+              "porcentaje": 0,
+              "flagCuentaCandidata": 0,
+              "convenio": {
+                "tipocuenta": 0,
+                "descripcion": "",
+                "factura": 0,
+                "tipoconvenio": 0,
+                "subtipoconvenio": 0,
+                "fechaconvenio": "",
+                "plazoconvenio": "",
+                "importeconvenio": 0,
+                "efectuoconvenio": 0,
+                "flagcuentaperdida": 0
+              }
+            },
+            {
+              "tipoCuenta": 1,
+              "saldo": 1473,
+              "interesAdicional": 0,
+              "abonoBase": 497,
+              "vencido": 0,
+              "minimo": 0,
+              "bonificacion": 198,
+              "interesPrimerMes": 0,
+              "saldaCon": 1275,
+              "fechaSaldaCon": "2025-03-19",
+              "factura": 295424,
+              "importeVenta": 6419,
+              "fechaVenta": "2024-07-18",
+              "descripcion": "PASAJERO R",
+              "tienda": 408,
+              "fechaUltimoMovimiento": "2025-02-16",
+              "plazo": 12,
+              "tipoProducto": 0,
+              "saldoTeorico": 1473,
+              "folioOrdenamiento": 2,
+              "importePrestamo": 0,
+              "flagCuentaPerdida": 0,
+              "porcentajeInteres": 0,
+              "refacturacion": 0,
+              "saldoMesAnterior": 0,
+              "importeInteres": 0,
+              "saldaConCorte": 1291,
+              "diasTranscurridos": 235,
+              "fechaSaldaConCorte": "2025-03-19",
+              "porcentajeBonificacionPrestamo": 0,
+              "porcentajeBonificacion": 0,
+              "interesSobreCompra": 1821,
+              "CuentasDetalle": [],
+              "saldoalafecha": 0,
+              "porcentaje": 0,
+              "flagCuentaCandidata": 0,
+              "convenio": {
+                "tipocuenta": 0,
+                "descripcion": "",
+                "factura": 0,
+                "tipoconvenio": 0,
+                "subtipoconvenio": 0,
+                "fechaconvenio": "",
+                "plazoconvenio": "",
+                "importeconvenio": 0,
+                "efectuoconvenio": 0,
+                "flagcuentaperdida": 0
+              }
+            },
+            {
+              "tipoCuenta": 1,
+              "saldo": 1235,
+              "interesAdicional": 0,
+              "abonoBase": 138,
+              "vencido": 0,
+              "minimo": 135,
+              "bonificacion": 171,
+              "interesPrimerMes": 0,
+              "saldaCon": 1064,
+              "fechaSaldaCon": "2025-03-18",
+              "factura": 401502,
+              "importeVenta": 1655,
+              "fechaVenta": "2024-11-17",
+              "descripcion": "CONTROL   ",
+              "tienda": 173,
+              "fechaUltimoMovimiento": "2025-02-16",
+              "plazo": 12,
+              "tipoProducto": 0,
+              "saldoTeorico": 1235,
+              "folioOrdenamiento": 3,
+              "importePrestamo": 0,
+              "flagCuentaPerdida": 0,
+              "porcentajeInteres": 0,
+              "refacturacion": 0,
+              "saldoMesAnterior": 0,
+              "importeInteres": 0,
+              "saldaConCorte": 1081,
+              "diasTranscurridos": 113,
+              "fechaSaldaConCorte": "2025-03-18",
+              "porcentajeBonificacionPrestamo": 0,
+              "porcentajeBonificacion": 0,
+              "interesSobreCompra": 506,
+              "CuentasDetalle": [],
+              "saldoalafecha": 0,
+              "porcentaje": 0,
+              "flagCuentaCandidata": 0,
+              "convenio": {
+                "tipocuenta": 0,
+                "descripcion": "",
+                "factura": 0,
+                "tipoconvenio": 0,
+                "subtipoconvenio": 0,
+                "fechaconvenio": "",
+                "plazoconvenio": "",
+                "importeconvenio": 0,
+                "efectuoconvenio": 0,
+                "flagcuentaperdida": 0
+              }
+            },
+            {
+              "tipoCuenta": 1,
+              "saldo": 2429,
+              "interesAdicional": 0,
+              "abonoBase": 270,
+              "vencido": 0,
+              "minimo": 270,
+              "bonificacion": 340,
+              "interesPrimerMes": 0,
+              "saldaCon": 2089,
+              "fechaSaldaCon": "2025-03-19",
+              "factura": 401663,
+              "importeVenta": 3489,
+              "fechaVenta": "2024-11-18",
+              "descripcion": "TOLDOS    ",
+              "tienda": 173,
+              "fechaUltimoMovimiento": "2025-02-16",
+              "plazo": 12,
+              "tipoProducto": 0,
+              "saldoTeorico": 2429,
+              "folioOrdenamiento": 4,
+              "importePrestamo": 0,
+              "flagCuentaPerdida": 0,
+              "porcentajeInteres": 0,
+              "refacturacion": 0,
+              "saldoMesAnterior": 0,
+              "importeInteres": 0,
+              "saldaConCorte": 2128,
+              "diasTranscurridos": 112,
+              "fechaSaldaConCorte": "2025-03-19",
+              "porcentajeBonificacionPrestamo": 0,
+              "porcentajeBonificacion": 0,
+              "interesSobreCompra": 990,
+              "CuentasDetalle": [],
+              "saldoalafecha": 0,
+              "porcentaje": 0,
+              "flagCuentaCandidata": 0,
+              "convenio": {
+                "tipocuenta": 0,
+                "descripcion": "",
+                "factura": 0,
+                "tipoconvenio": 0,
+                "subtipoconvenio": 0,
+                "fechaconvenio": "",
+                "plazoconvenio": "",
+                "importeconvenio": 0,
+                "efectuoconvenio": 0,
+                "flagcuentaperdida": 0
+              }
+            },
+            {
+              "tipoCuenta": 3,
+              "saldo": 30809,
+              "interesAdicional": 0,
+              "abonoBase": 2201,
+              "vencido": 0,
+              "minimo": 2200,
+              "bonificacion": 7289,
+              "interesPrimerMes": 0,
+              "saldaCon": 23520,
+              "factura": 45038,
+              "importeVenta": 0,
+              "descripcion": "PRESTAMO                      ",
+              "tienda": 173,
+              "fechaUltimoMovimiento": "2025-03-01",
+              "plazo": 18,
+              "tipoProducto": 0,
+              "saldoTeorico": 23415,
+              "folioOrdenamiento": 5,
+              "importePrestamo": 39615,
+              "fechaPrestamo": "2025-01-31",
+              "flagCuentaPerdida": 0,
+              "porcentajeInteres": 0,
+              "refacturacion": 0,
+              "saldoMesAnterior": 0,
+              "importeInteres": 0,
+              "saldaConCorte": 0,
+              "diasTranscurridos": 129,
+              "porcentajeBonificacionPrestamo": 4566,
+              "porcentajeBonificacion": 0,
+              "interesSobreCompra": 15964,
+              "CuentasDetalle": [],
+              "saldoalafecha": 0,
+              "porcentaje": 0,
+              "flagCuentaCandidata": 0,
+              "convenio": {
+                "tipocuenta": 0,
+                "descripcion": "",
+                "factura": 0,
+                "tipoconvenio": 0,
+                "subtipoconvenio": 0,
+                "fechaconvenio": "",
+                "plazoconvenio": "",
+                "importeconvenio": 0,
+                "efectuoconvenio": 0,
+                "flagcuentaperdida": 0
+              }
+            }
+          ],
+          "data": {
+            "folioAbono": "2503106609000160306",
+            "numeroCliente": 546229166,
+            "nombreCliente": "THELMA LUCERO NU#EZ ZU#IGA",
+            "puntualidad": "A",
+            "cuentas": [
+              {
+                "tipoCuenta": 0,
+                "saldo": 3246,
+                "interesAdicional": 0,
+                "abonoBase": 360,
+                "vencido": 0,
+                "minimo": 360,
+                "bonificacion": 598,
+                "interesPrimerMes": 0,
+                "saldaCon": 2648,
+                "fechaSaldaCon": "2025-03-10",
+                "factura": 0,
+                "importeVenta": 0,
+                "descripcion": "ROPA",
+                "tienda": 0,
+                "fechaUltimoMovimiento": "2025-02-16",
+                "fechaUltimaCompra": "2024-11-17",
+                "plazo": 12,
+                "tipoProducto": 0,
+                "saldoTeorico": 3246,
+                "folioOrdenamiento": 1,
+                "importePrestamo": 0,
+                "flagCuentaPerdida": 0,
+                "porcentajeInteres": 3900,
+                "refacturacion": 1,
+                "saldoMesAnterior": 3246,
+                "importeInteres": 1209,
+                "saldaConCorte": 0,
+                "diasTranscurridos": 0,
+                "porcentajeBonificacionPrestamo": 0,
+                "porcentajeBonificacion": 4953,
+                "interesSobreCompra": 0,
+                "CuentasDetalle": [
+                  {
+                    "saldoDetalle": 3246,
+                    "interesAdicionalDetalle": 0,
+                    "tipoDeduccionDetalle": 0,
+                    "fechaUltimaCompraDetalle": "2024-11-17",
+                    "saldoctaperdida": 0,
+                    "interesadicionalctaperdida": 0,
+                    "tipodeduccionctaperdida": 0
+                  }
+                ],
+                "saldoalafecha": 0,
+                "porcentaje": 0,
+                "flagCuentaCandidata": 0,
+                "convenio": {
+                  "tipocuenta": 0,
+                  "descripcion": "",
+                  "factura": 0,
+                  "tipoconvenio": 0,
+                  "subtipoconvenio": 0,
+                  "fechaconvenio": "",
+                  "plazoconvenio": "",
+                  "importeconvenio": 0,
+                  "efectuoconvenio": 0,
+                  "flagcuentaperdida": 0
+                }
+              },
+              {
+                "tipoCuenta": 1,
+                "saldo": 1473,
+                "interesAdicional": 0,
+                "abonoBase": 497,
+                "vencido": 0,
+                "minimo": 0,
+                "bonificacion": 198,
+                "interesPrimerMes": 0,
+                "saldaCon": 1275,
+                "fechaSaldaCon": "2025-03-19",
+                "factura": 295424,
+                "importeVenta": 6419,
+                "fechaVenta": "2024-07-18",
+                "descripcion": "PASAJERO R",
+                "tienda": 408,
+                "fechaUltimoMovimiento": "2025-02-16",
+                "plazo": 12,
+                "tipoProducto": 0,
+                "saldoTeorico": 1473,
+                "folioOrdenamiento": 2,
+                "importePrestamo": 0,
+                "flagCuentaPerdida": 0,
+                "porcentajeInteres": 0,
+                "refacturacion": 0,
+                "saldoMesAnterior": 0,
+                "importeInteres": 0,
+                "saldaConCorte": 1291,
+                "diasTranscurridos": 235,
+                "fechaSaldaConCorte": "2025-03-19",
+                "porcentajeBonificacionPrestamo": 0,
+                "porcentajeBonificacion": 0,
+                "interesSobreCompra": 1821,
+                "CuentasDetalle": [],
+                "saldoalafecha": 0,
+                "porcentaje": 0,
+                "flagCuentaCandidata": 0,
+                "convenio": {
+                  "tipocuenta": 0,
+                  "descripcion": "",
+                  "factura": 0,
+                  "tipoconvenio": 0,
+                  "subtipoconvenio": 0,
+                  "fechaconvenio": "",
+                  "plazoconvenio": "",
+                  "importeconvenio": 0,
+                  "efectuoconvenio": 0,
+                  "flagcuentaperdida": 0
+                }
+              },
+              {
+                "tipoCuenta": 1,
+                "saldo": 1235,
+                "interesAdicional": 0,
+                "abonoBase": 138,
+                "vencido": 0,
+                "minimo": 135,
+                "bonificacion": 171,
+                "interesPrimerMes": 0,
+                "saldaCon": 1064,
+                "fechaSaldaCon": "2025-03-18",
+                "factura": 401502,
+                "importeVenta": 1655,
+                "fechaVenta": "2024-11-17",
+                "descripcion": "CONTROL   ",
+                "tienda": 173,
+                "fechaUltimoMovimiento": "2025-02-16",
+                "plazo": 12,
+                "tipoProducto": 0,
+                "saldoTeorico": 1235,
+                "folioOrdenamiento": 3,
+                "importePrestamo": 0,
+                "flagCuentaPerdida": 0,
+                "porcentajeInteres": 0,
+                "refacturacion": 0,
+                "saldoMesAnterior": 0,
+                "importeInteres": 0,
+                "saldaConCorte": 1081,
+                "diasTranscurridos": 113,
+                "fechaSaldaConCorte": "2025-03-18",
+                "porcentajeBonificacionPrestamo": 0,
+                "porcentajeBonificacion": 0,
+                "interesSobreCompra": 506,
+                "CuentasDetalle": [],
+                "saldoalafecha": 0,
+                "porcentaje": 0,
+                "flagCuentaCandidata": 0,
+                "convenio": {
+                  "tipocuenta": 0,
+                  "descripcion": "",
+                  "factura": 0,
+                  "tipoconvenio": 0,
+                  "subtipoconvenio": 0,
+                  "fechaconvenio": "",
+                  "plazoconvenio": "",
+                  "importeconvenio": 0,
+                  "efectuoconvenio": 0,
+                  "flagcuentaperdida": 0
+                }
+              },{
+                "tipoCuenta": 3,
+                "saldo": 30809,
+                "interesAdicional": 0,
+                "abonoBase": 2201,
+                "vencido": 0,
+                "minimo": 2200,
+                "bonificacion": 7289,
+                "interesPrimerMes": 0,
+                "saldaCon": 23520,
+                "factura": 45038,
+                "importeVenta": 0,
+                "descripcion": "PRESTAMO                      ",
+                "tienda": 173,
+                "fechaUltimoMovimiento": "2025-03-01",
+                "plazo": 18,
+                "tipoProducto": 0,
+                "saldoTeorico": 23415,
+                "folioOrdenamiento": 5,
+                "importePrestamo": 39615,
+                "fechaPrestamo": "2025-01-31",
+                "flagCuentaPerdida": 0,
+                "porcentajeInteres": 0,
+                "refacturacion": 0,
+                "saldoMesAnterior": 0,
+                "importeInteres": 0,
+                "saldaConCorte": 0,
+                "diasTranscurridos": 129,
+                "porcentajeBonificacionPrestamo": 4566,
+                "porcentajeBonificacion": 0,
+                "interesSobreCompra": 15964,
+                "CuentasDetalle": [],
+                "saldoalafecha": 0,
+                "porcentaje": 0,
+                "flagCuentaCandidata": 0,
+                "convenio": {
+                  "tipocuenta": 0,
+                  "descripcion": "",
+                  "factura": 0,
+                  "tipoconvenio": 0,
+                  "subtipoconvenio": 0,
+                  "fechaconvenio": "",
+                  "plazoconvenio": "",
+                  "importeconvenio": 0,
+                  "efectuoconvenio": 0,
+                  "flagcuentaperdida": 0
+                }
+              },
+              {
+                "tipoCuenta": 1,
+                "saldo": 2429,
+                "interesAdicional": 0,
+                "abonoBase": 270,
+                "vencido": 0,
+                "minimo": 270,
+                "bonificacion": 340,
+                "interesPrimerMes": 0,
+                "saldaCon": 2089,
+                "fechaSaldaCon": "2025-03-19",
+                "factura": 401663,
+                "importeVenta": 3489,
+                "fechaVenta": "2024-11-18",
+                "descripcion": "TOLDOS    ",
+                "tienda": 173,
+                "fechaUltimoMovimiento": "2025-02-16",
+                "plazo": 12,
+                "tipoProducto": 0,
+                "saldoTeorico": 2429,
+                "folioOrdenamiento": 4,
+                "importePrestamo": 0,
+                "flagCuentaPerdida": 0,
+                "porcentajeInteres": 0,
+                "refacturacion": 0,
+                "saldoMesAnterior": 0,
+                "importeInteres": 0,
+                "saldaConCorte": 2128,
+                "diasTranscurridos": 112,
+                "fechaSaldaConCorte": "2025-03-19",
+                "porcentajeBonificacionPrestamo": 0,
+                "porcentajeBonificacion": 0,
+                "interesSobreCompra": 990,
+                "CuentasDetalle": [],
+                "saldoalafecha": 0,
+                "porcentaje": 0,
+                "flagCuentaCandidata": 0,
+                "convenio": {
+                  "tipocuenta": 0,
+                  "descripcion": "",
+                  "factura": 0,
+                  "tipoconvenio": 0,
+                  "subtipoconvenio": 0,
+                  "fechaconvenio": "",
+                  "plazoconvenio": "",
+                  "importeconvenio": 0,
+                  "efectuoconvenio": 0,
+                  "flagcuentaperdida": 0
+                }
+              }
+            ]
+          },
+          "estado": 0,
+          "token": "11111-11111-11111-11111",
+          "mensaje": "EXITO!"
+        }
+      },
+      "meta": {
+        "id_transaction": "consultarCuentas_v1_endpointnatsddbbbfb9q74gv_cv7j9bot251s73d6aolgc3f1ed57849b45e996412e1b8a94a4f6",
+        "status": "SUCCESS"
+      }
+    }
+  }</con:responseContent></con:response><con:response name="variasSinPPC" id="2efbd8a0-93aa-47d8-8e80-5843869d21fb" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "response": {
+      "data": {
+        "response": {
+          "folioAbono": "2503106609000160306",
+          "numeroCliente": 90294695,
+          "nombreCliente": "YESENIA LEONEL VERA",
+          "puntualidad": "A",
+          "cuentas": [
+            {
+              "tipoCuenta": 0,
+              "saldo": 3246,
+              "interesAdicional": 0,
+              "abonoBase": 360,
+              "vencido": 0,
+              "minimo": 360,
+              "bonificacion": 598,
+              "interesPrimerMes": 0,
+              "saldaCon": 2648,
+              "fechaSaldaCon": "2025-03-10",
+              "factura": 0,
+              "importeVenta": 0,
+              "descripcion": "ROPA",
+              "tienda": 0,
+              "fechaUltimoMovimiento": "2025-02-16",
+              "fechaUltimaCompra": "2024-11-17",
+              "plazo": 12,
+              "tipoProducto": 0,
+              "saldoTeorico": 3246,
+              "folioOrdenamiento": 1,
+              "importePrestamo": 0,
+              "flagCuentaPerdida": 0,
+              "porcentajeInteres": 3900,
+              "refacturacion": 1,
+              "saldoMesAnterior": 3246,
+              "importeInteres": 1209,
+              "saldaConCorte": 0,
+              "diasTranscurridos": 0,
+              "porcentajeBonificacionPrestamo": 0,
+              "porcentajeBonificacion": 4953,
+              "interesSobreCompra": 0,
+              "CuentasDetalle": [
+                {
+                  "saldoDetalle": 3246,
+                  "interesAdicionalDetalle": 0,
+                  "tipoDeduccionDetalle": 0,
+                  "fechaUltimaCompraDetalle": "2024-11-17",
+                  "saldoctaperdida": 0,
+                  "interesadicionalctaperdida": 0,
+                  "tipodeduccionctaperdida": 0
+                }
+              ],
+              "saldoalafecha": 0,
+              "porcentaje": 0,
+              "flagCuentaCandidata": 0,
+              "convenio": {
+                "tipocuenta": 0,
+                "descripcion": "",
+                "factura": 0,
+                "tipoconvenio": 0,
+                "subtipoconvenio": 0,
+                "fechaconvenio": "",
+                "plazoconvenio": "",
+                "importeconvenio": 0,
+                "efectuoconvenio": 0,
+                "flagcuentaperdida": 0
+              }
+            },
+            {
+              "tipoCuenta": 1,
+              "saldo": 1473,
+              "interesAdicional": 0,
+              "abonoBase": 497,
+              "vencido": 0,
+              "minimo": 0,
+              "bonificacion": 198,
+              "interesPrimerMes": 0,
+              "saldaCon": 1275,
+              "fechaSaldaCon": "2025-03-19",
+              "factura": 295424,
+              "importeVenta": 6419,
+              "fechaVenta": "2024-07-18",
+              "descripcion": "PASAJERO R",
+              "tienda": 408,
+              "fechaUltimoMovimiento": "2025-02-16",
+              "plazo": 12,
+              "tipoProducto": 0,
+              "saldoTeorico": 1473,
+              "folioOrdenamiento": 2,
+              "importePrestamo": 0,
+              "flagCuentaPerdida": 0,
+              "porcentajeInteres": 0,
+              "refacturacion": 0,
+              "saldoMesAnterior": 0,
+              "importeInteres": 0,
+              "saldaConCorte": 1291,
+              "diasTranscurridos": 235,
+              "fechaSaldaConCorte": "2025-03-19",
+              "porcentajeBonificacionPrestamo": 0,
+              "porcentajeBonificacion": 0,
+              "interesSobreCompra": 1821,
+              "CuentasDetalle": [],
+              "saldoalafecha": 0,
+              "porcentaje": 0,
+              "flagCuentaCandidata": 0,
+              "convenio": {
+                "tipocuenta": 0,
+                "descripcion": "",
+                "factura": 0,
+                "tipoconvenio": 0,
+                "subtipoconvenio": 0,
+                "fechaconvenio": "",
+                "plazoconvenio": "",
+                "importeconvenio": 0,
+                "efectuoconvenio": 0,
+                "flagcuentaperdida": 0
+              }
+            },
+            {
+              "tipoCuenta": 1,
+              "saldo": 1235,
+              "interesAdicional": 0,
+              "abonoBase": 138,
+              "vencido": 0,
+              "minimo": 135,
+              "bonificacion": 171,
+              "interesPrimerMes": 0,
+              "saldaCon": 1064,
+              "fechaSaldaCon": "2025-03-18",
+              "factura": 401502,
+              "importeVenta": 1655,
+              "fechaVenta": "2024-11-17",
+              "descripcion": "CONTROL   ",
+              "tienda": 173,
+              "fechaUltimoMovimiento": "2025-02-16",
+              "plazo": 12,
+              "tipoProducto": 0,
+              "saldoTeorico": 1235,
+              "folioOrdenamiento": 3,
+              "importePrestamo": 0,
+              "flagCuentaPerdida": 0,
+              "porcentajeInteres": 0,
+              "refacturacion": 0,
+              "saldoMesAnterior": 0,
+              "importeInteres": 0,
+              "saldaConCorte": 1081,
+              "diasTranscurridos": 113,
+              "fechaSaldaConCorte": "2025-03-18",
+              "porcentajeBonificacionPrestamo": 0,
+              "porcentajeBonificacion": 0,
+              "interesSobreCompra": 506,
+              "CuentasDetalle": [],
+              "saldoalafecha": 0,
+              "porcentaje": 0,
+              "flagCuentaCandidata": 0,
+              "convenio": {
+                "tipocuenta": 0,
+                "descripcion": "",
+                "factura": 0,
+                "tipoconvenio": 0,
+                "subtipoconvenio": 0,
+                "fechaconvenio": "",
+                "plazoconvenio": "",
+                "importeconvenio": 0,
+                "efectuoconvenio": 0,
+                "flagcuentaperdida": 0
+              }
+            },
+            {
+              "tipoCuenta": 1,
+              "saldo": 2429,
+              "interesAdicional": 0,
+              "abonoBase": 270,
+              "vencido": 0,
+              "minimo": 270,
+              "bonificacion": 340,
+              "interesPrimerMes": 0,
+              "saldaCon": 2089,
+              "fechaSaldaCon": "2025-03-19",
+              "factura": 401663,
+              "importeVenta": 3489,
+              "fechaVenta": "2024-11-18",
+              "descripcion": "TOLDOS    ",
+              "tienda": 173,
+              "fechaUltimoMovimiento": "2025-02-16",
+              "plazo": 12,
+              "tipoProducto": 0,
+              "saldoTeorico": 2429,
+              "folioOrdenamiento": 4,
+              "importePrestamo": 0,
+              "flagCuentaPerdida": 0,
+              "porcentajeInteres": 0,
+              "refacturacion": 0,
+              "saldoMesAnterior": 0,
+              "importeInteres": 0,
+              "saldaConCorte": 2128,
+              "diasTranscurridos": 112,
+              "fechaSaldaConCorte": "2025-03-19",
+              "porcentajeBonificacionPrestamo": 0,
+              "porcentajeBonificacion": 0,
+              "interesSobreCompra": 990,
+              "CuentasDetalle": [],
+              "saldoalafecha": 0,
+              "porcentaje": 0,
+              "flagCuentaCandidata": 0,
+              "convenio": {
+                "tipocuenta": 0,
+                "descripcion": "",
+                "factura": 0,
+                "tipoconvenio": 0,
+                "subtipoconvenio": 0,
+                "fechaconvenio": "",
+                "plazoconvenio": "",
+                "importeconvenio": 0,
+                "efectuoconvenio": 0,
+                "flagcuentaperdida": 0
+              }
+            }
+          ],
+          "data": {
+            "folioAbono": "2503106609000160306",
+            "numeroCliente": 90294695,
+            "nombreCliente": "YESENIA LEONEL VERA",
+            "puntualidad": "A",
+            "cuentas": [
+              {
+                "tipoCuenta": 0,
+                "saldo": 3246,
+                "interesAdicional": 0,
+                "abonoBase": 360,
+                "vencido": 0,
+                "minimo": 360,
+                "bonificacion": 598,
+                "interesPrimerMes": 0,
+                "saldaCon": 2648,
+                "fechaSaldaCon": "2025-03-10",
+                "factura": 0,
+                "importeVenta": 0,
+                "descripcion": "ROPA",
+                "tienda": 0,
+                "fechaUltimoMovimiento": "2025-02-16",
+                "fechaUltimaCompra": "2024-11-17",
+                "plazo": 12,
+                "tipoProducto": 0,
+                "saldoTeorico": 3246,
+                "folioOrdenamiento": 1,
+                "importePrestamo": 0,
+                "flagCuentaPerdida": 0,
+                "porcentajeInteres": 3900,
+                "refacturacion": 1,
+                "saldoMesAnterior": 3246,
+                "importeInteres": 1209,
+                "saldaConCorte": 0,
+                "diasTranscurridos": 0,
+                "porcentajeBonificacionPrestamo": 0,
+                "porcentajeBonificacion": 4953,
+                "interesSobreCompra": 0,
+                "CuentasDetalle": [
+                  {
+                    "saldoDetalle": 3246,
+                    "interesAdicionalDetalle": 0,
+                    "tipoDeduccionDetalle": 0,
+                    "fechaUltimaCompraDetalle": "2024-11-17",
+                    "saldoctaperdida": 0,
+                    "interesadicionalctaperdida": 0,
+                    "tipodeduccionctaperdida": 0
+                  }
+                ],
+                "saldoalafecha": 0,
+                "porcentaje": 0,
+                "flagCuentaCandidata": 0,
+                "convenio": {
+                  "tipocuenta": 0,
+                  "descripcion": "",
+                  "factura": 0,
+                  "tipoconvenio": 0,
+                  "subtipoconvenio": 0,
+                  "fechaconvenio": "",
+                  "plazoconvenio": "",
+                  "importeconvenio": 0,
+                  "efectuoconvenio": 0,
+                  "flagcuentaperdida": 0
+                }
+              },
+              {
+                "tipoCuenta": 1,
+                "saldo": 1473,
+                "interesAdicional": 0,
+                "abonoBase": 497,
+                "vencido": 0,
+                "minimo": 0,
+                "bonificacion": 198,
+                "interesPrimerMes": 0,
+                "saldaCon": 1275,
+                "fechaSaldaCon": "2025-03-19",
+                "factura": 295424,
+                "importeVenta": 6419,
+                "fechaVenta": "2024-07-18",
+                "descripcion": "PASAJERO R",
+                "tienda": 408,
+                "fechaUltimoMovimiento": "2025-02-16",
+                "plazo": 12,
+                "tipoProducto": 0,
+                "saldoTeorico": 1473,
+                "folioOrdenamiento": 2,
+                "importePrestamo": 0,
+                "flagCuentaPerdida": 0,
+                "porcentajeInteres": 0,
+                "refacturacion": 0,
+                "saldoMesAnterior": 0,
+                "importeInteres": 0,
+                "saldaConCorte": 1291,
+                "diasTranscurridos": 235,
+                "fechaSaldaConCorte": "2025-03-19",
+                "porcentajeBonificacionPrestamo": 0,
+                "porcentajeBonificacion": 0,
+                "interesSobreCompra": 1821,
+                "CuentasDetalle": [],
+                "saldoalafecha": 0,
+                "porcentaje": 0,
+                "flagCuentaCandidata": 0,
+                "convenio": {
+                  "tipocuenta": 0,
+                  "descripcion": "",
+                  "factura": 0,
+                  "tipoconvenio": 0,
+                  "subtipoconvenio": 0,
+                  "fechaconvenio": "",
+                  "plazoconvenio": "",
+                  "importeconvenio": 0,
+                  "efectuoconvenio": 0,
+                  "flagcuentaperdida": 0
+                }
+              },
+              {
+                "tipoCuenta": 1,
+                "saldo": 1235,
+                "interesAdicional": 0,
+                "abonoBase": 138,
+                "vencido": 0,
+                "minimo": 135,
+                "bonificacion": 171,
+                "interesPrimerMes": 0,
+                "saldaCon": 1064,
+                "fechaSaldaCon": "2025-03-18",
+                "factura": 401502,
+                "importeVenta": 1655,
+                "fechaVenta": "2024-11-17",
+                "descripcion": "CONTROL   ",
+                "tienda": 173,
+                "fechaUltimoMovimiento": "2025-02-16",
+                "plazo": 12,
+                "tipoProducto": 0,
+                "saldoTeorico": 1235,
+                "folioOrdenamiento": 3,
+                "importePrestamo": 0,
+                "flagCuentaPerdida": 0,
+                "porcentajeInteres": 0,
+                "refacturacion": 0,
+                "saldoMesAnterior": 0,
+                "importeInteres": 0,
+                "saldaConCorte": 1081,
+                "diasTranscurridos": 113,
+                "fechaSaldaConCorte": "2025-03-18",
+                "porcentajeBonificacionPrestamo": 0,
+                "porcentajeBonificacion": 0,
+                "interesSobreCompra": 506,
+                "CuentasDetalle": [],
+                "saldoalafecha": 0,
+                "porcentaje": 0,
+                "flagCuentaCandidata": 0,
+                "convenio": {
+                  "tipocuenta": 0,
+                  "descripcion": "",
+                  "factura": 0,
+                  "tipoconvenio": 0,
+                  "subtipoconvenio": 0,
+                  "fechaconvenio": "",
+                  "plazoconvenio": "",
+                  "importeconvenio": 0,
+                  "efectuoconvenio": 0,
+                  "flagcuentaperdida": 0
+                }
+              },
+              {
+                "tipoCuenta": 1,
+                "saldo": 2429,
+                "interesAdicional": 0,
+                "abonoBase": 270,
+                "vencido": 0,
+                "minimo": 270,
+                "bonificacion": 340,
+                "interesPrimerMes": 0,
+                "saldaCon": 2089,
+                "fechaSaldaCon": "2025-03-19",
+                "factura": 401663,
+                "importeVenta": 3489,
+                "fechaVenta": "2024-11-18",
+                "descripcion": "TOLDOS    ",
+                "tienda": 173,
+                "fechaUltimoMovimiento": "2025-02-16",
+                "plazo": 12,
+                "tipoProducto": 0,
+                "saldoTeorico": 2429,
+                "folioOrdenamiento": 4,
+                "importePrestamo": 0,
+                "flagCuentaPerdida": 0,
+                "porcentajeInteres": 0,
+                "refacturacion": 0,
+                "saldoMesAnterior": 0,
+                "importeInteres": 0,
+                "saldaConCorte": 2128,
+                "diasTranscurridos": 112,
+                "fechaSaldaConCorte": "2025-03-19",
+                "porcentajeBonificacionPrestamo": 0,
+                "porcentajeBonificacion": 0,
+                "interesSobreCompra": 990,
+                "CuentasDetalle": [],
+                "saldoalafecha": 0,
+                "porcentaje": 0,
+                "flagCuentaCandidata": 0,
+                "convenio": {
+                  "tipocuenta": 0,
+                  "descripcion": "",
+                  "factura": 0,
+                  "tipoconvenio": 0,
+                  "subtipoconvenio": 0,
+                  "fechaconvenio": "",
+                  "plazoconvenio": "",
+                  "importeconvenio": 0,
+                  "efectuoconvenio": 0,
+                  "flagcuentaperdida": 0
+                }
+              }
+            ]
+          },
+          "estado": 0,
+          "token": "22222-22222-22222-22222",
+          "mensaje": "EXITO!"
+        }
+      },
+      "meta": {
+        "id_transaction": "consultarCuentas_v1_endpointnatsddbbbfb9q74gv_cv7j9bot251s73d6aolgc3f1ed57849b45e996412e1b8a94a4f6",
+        "status": "SUCCESS"
+      }
+    }
+  }</con:responseContent></con:response><con:response name="variasconPPCVencido" id="58427ac4-fc3e-4b5f-b44b-f8cd9f35b574" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "response": {
+      "data": {
+        "response": {
+          "folioAbono": "2503106609000160306",
+          "numeroCliente": 90294695,
+          "nombreCliente": "YESENIA LEONEL VERA",
+          "puntualidad": "A",
+          "cuentas": [
+            {
+              "tipoCuenta": 0,
+              "saldo": 3246,
+              "interesAdicional": 0,
+              "abonoBase": 360,
+              "vencido": 0,
+              "minimo": 360,
+              "bonificacion": 598,
+              "interesPrimerMes": 0,
+              "saldaCon": 2648,
+              "fechaSaldaCon": "2025-03-10",
+              "factura": 0,
+              "importeVenta": 0,
+              "descripcion": "ROPA",
+              "tienda": 0,
+              "fechaUltimoMovimiento": "2025-02-16",
+              "fechaUltimaCompra": "2024-11-17",
+              "plazo": 12,
+              "tipoProducto": 0,
+              "saldoTeorico": 3246,
+              "folioOrdenamiento": 1,
+              "importePrestamo": 0,
+              "flagCuentaPerdida": 0,
+              "porcentajeInteres": 3900,
+              "refacturacion": 1,
+              "saldoMesAnterior": 3246,
+              "importeInteres": 1209,
+              "saldaConCorte": 0,
+              "diasTranscurridos": 0,
+              "porcentajeBonificacionPrestamo": 0,
+              "porcentajeBonificacion": 4953,
+              "interesSobreCompra": 0,
+              "CuentasDetalle": [
+                {
+                  "saldoDetalle": 3246,
+                  "interesAdicionalDetalle": 0,
+                  "tipoDeduccionDetalle": 0,
+                  "fechaUltimaCompraDetalle": "2024-11-17",
+                  "saldoctaperdida": 0,
+                  "interesadicionalctaperdida": 0,
+                  "tipodeduccionctaperdida": 0
+                }
+              ],
+              "saldoalafecha": 0,
+              "porcentaje": 0,
+              "flagCuentaCandidata": 0,
+              "convenio": {
+                "tipocuenta": 0,
+                "descripcion": "",
+                "factura": 0,
+                "tipoconvenio": 0,
+                "subtipoconvenio": 0,
+                "fechaconvenio": "",
+                "plazoconvenio": "",
+                "importeconvenio": 0,
+                "efectuoconvenio": 0,
+                "flagcuentaperdida": 0
+              }
+            },
+            {
+              "tipoCuenta": 1,
+              "saldo": 1235,
+              "interesAdicional": 0,
+              "abonoBase": 138,
+              "vencido": 0,
+              "minimo": 135,
+              "bonificacion": 171,
+              "interesPrimerMes": 0,
+              "saldaCon": 1064,
+              "fechaSaldaCon": "2025-03-18",
+              "factura": 401502,
+              "importeVenta": 1655,
+              "fechaVenta": "2024-11-17",
+              "descripcion": "CONTROL   ",
+              "tienda": 173,
+              "fechaUltimoMovimiento": "2025-02-16",
+              "plazo": 12,
+              "tipoProducto": 0,
+              "saldoTeorico": 1235,
+              "folioOrdenamiento": 3,
+              "importePrestamo": 0,
+              "flagCuentaPerdida": 0,
+              "porcentajeInteres": 0,
+              "refacturacion": 0,
+              "saldoMesAnterior": 0,
+              "importeInteres": 0,
+              "saldaConCorte": 1081,
+              "diasTranscurridos": 113,
+              "fechaSaldaConCorte": "2025-03-18",
+              "porcentajeBonificacionPrestamo": 0,
+              "porcentajeBonificacion": 0,
+              "interesSobreCompra": 506,
+              "CuentasDetalle": [],
+              "saldoalafecha": 0,
+              "porcentaje": 0,
+              "flagCuentaCandidata": 0,
+              "convenio": {
+                "tipocuenta": 0,
+                "descripcion": "",
+                "factura": 0,
+                "tipoconvenio": 0,
+                "subtipoconvenio": 0,
+                "fechaconvenio": "",
+                "plazoconvenio": "",
+                "importeconvenio": 0,
+                "efectuoconvenio": 0,
+                "flagcuentaperdida": 0
+              }
+            },
+            {
+              "tipoCuenta": 3,
+              "saldo": 30809,
+              "interesAdicional": 0,
+              "abonoBase": 2201,
+              "vencido": 32000,
+              "minimo": 2200,
+              "bonificacion": 7289,
+              "interesPrimerMes": 0,
+              "saldaCon": 23520,
+              "factura": 45038,
+              "importeVenta": 0,
+              "descripcion": "PRESTAMO                      ",
+              "tienda": 173,
+              "fechaUltimoMovimiento": "2025-03-01",
+              "plazo": 18,
+              "tipoProducto": 0,
+              "saldoTeorico": 23415,
+              "folioOrdenamiento": 5,
+              "importePrestamo": 39615,
+              "fechaPrestamo": "2024-08-01",
+              "flagCuentaPerdida": 0,
+              "porcentajeInteres": 0,
+              "refacturacion": 0,
+              "saldoMesAnterior": 0,
+              "importeInteres": 0,
+              "saldaConCorte": 0,
+              "diasTranscurridos": 129,
+              "porcentajeBonificacionPrestamo": 4566,
+              "porcentajeBonificacion": 0,
+              "interesSobreCompra": 15964,
+              "CuentasDetalle": [],
+              "saldoalafecha": 0,
+              "porcentaje": 0,
+              "flagCuentaCandidata": 0,
+              "convenio": {
+                "tipocuenta": 0,
+                "descripcion": "",
+                "factura": 0,
+                "tipoconvenio": 0,
+                "subtipoconvenio": 0,
+                "fechaconvenio": "",
+                "plazoconvenio": "",
+                "importeconvenio": 0,
+                "efectuoconvenio": 0,
+                "flagcuentaperdida": 0
+              }
+            }
+          ],
+          "data": {
+            "folioAbono": "2503106609000160306",
+            "numeroCliente": 90294695,
+            "nombreCliente": "YESENIA LEONEL VERA",
+            "puntualidad": "A",
+            "cuentas": [
+              {
+                "tipoCuenta": 0,
+                "saldo": 3246,
+                "interesAdicional": 0,
+                "abonoBase": 360,
+                "vencido": 3500,
+                "minimo": 360,
+                "bonificacion": 598,
+                "interesPrimerMes": 0,
+                "saldaCon": 2648,
+                "fechaSaldaCon": "2025-03-10",
+                "factura": 0,
+                "importeVenta": 0,
+                "descripcion": "ROPA",
+                "tienda": 0,
+                "fechaUltimoMovimiento": "2025-02-16",
+                "fechaUltimaCompra": "2024-11-17",
+                "plazo": 12,
+                "tipoProducto": 0,
+                "saldoTeorico": 3246,
+                "folioOrdenamiento": 1,
+                "importePrestamo": 0,
+                "flagCuentaPerdida": 0,
+                "porcentajeInteres": 3900,
+                "refacturacion": 1,
+                "saldoMesAnterior": 3246,
+                "importeInteres": 1209,
+                "saldaConCorte": 0,
+                "diasTranscurridos": 0,
+                "porcentajeBonificacionPrestamo": 0,
+                "porcentajeBonificacion": 4953,
+                "interesSobreCompra": 0,
+                "CuentasDetalle": [
+                  {
+                    "saldoDetalle": 3246,
+                    "interesAdicionalDetalle": 0,
+                    "tipoDeduccionDetalle": 0,
+                    "fechaUltimaCompraDetalle": "2024-11-17",
+                    "saldoctaperdida": 0,
+                    "interesadicionalctaperdida": 0,
+                    "tipodeduccionctaperdida": 0
+                  }
+                ],
+                "saldoalafecha": 0,
+                "porcentaje": 0,
+                "flagCuentaCandidata": 0,
+                "convenio": {
+                  "tipocuenta": 0,
+                  "descripcion": "",
+                  "factura": 0,
+                  "tipoconvenio": 0,
+                  "subtipoconvenio": 0,
+                  "fechaconvenio": "",
+                  "plazoconvenio": "",
+                  "importeconvenio": 0,
+                  "efectuoconvenio": 0,
+                  "flagcuentaperdida": 0
+                }
+              },
+              {
+                "tipoCuenta": 1,
+                "saldo": 1235,
+                "interesAdicional": 0,
+                "abonoBase": 138,
+                "vencido": 0,
+                "minimo": 135,
+                "bonificacion": 171,
+                "interesPrimerMes": 0,
+                "saldaCon": 1064,
+                "fechaSaldaCon": "2025-03-18",
+                "factura": 401502,
+                "importeVenta": 1655,
+                "fechaVenta": "2024-11-17",
+                "descripcion": "CONTROL   ",
+                "tienda": 173,
+                "fechaUltimoMovimiento": "2025-02-16",
+                "plazo": 12,
+                "tipoProducto": 0,
+                "saldoTeorico": 1235,
+                "folioOrdenamiento": 3,
+                "importePrestamo": 0,
+                "flagCuentaPerdida": 0,
+                "porcentajeInteres": 0,
+                "refacturacion": 0,
+                "saldoMesAnterior": 0,
+                "importeInteres": 0,
+                "saldaConCorte": 1081,
+                "diasTranscurridos": 113,
+                "fechaSaldaConCorte": "2025-03-18",
+                "porcentajeBonificacionPrestamo": 0,
+                "porcentajeBonificacion": 0,
+                "interesSobreCompra": 506,
+                "CuentasDetalle": [],
+                "saldoalafecha": 0,
+                "porcentaje": 0,
+                "flagCuentaCandidata": 0,
+                "convenio": {
+                  "tipocuenta": 0,
+                  "descripcion": "",
+                  "factura": 0,
+                  "tipoconvenio": 0,
+                  "subtipoconvenio": 0,
+                  "fechaconvenio": "",
+                  "plazoconvenio": "",
+                  "importeconvenio": 0,
+                  "efectuoconvenio": 0,
+                  "flagcuentaperdida": 0
+                }
+              },
+              {
+                "tipoCuenta": 3,
+                "saldo": 30809,
+                "interesAdicional": 0,
+                "abonoBase": 2201,
+                "vencido": 32000,
+                "minimo": 2200,
+                "bonificacion": 7289,
+                "interesPrimerMes": 0,
+                "saldaCon": 23520,
+                "factura": 45038,
+                "importeVenta": 0,
+                "descripcion": "PRESTAMO                      ",
+                "tienda": 173,
+                "fechaUltimoMovimiento": "2025-03-01",
+                "plazo": 18,
+                "tipoProducto": 0,
+                "saldoTeorico": 23415,
+                "folioOrdenamiento": 5,
+                "importePrestamo": 39615,
+                "fechaPrestamo": "2024-08-01",
+                "flagCuentaPerdida": 0,
+                "porcentajeInteres": 0,
+                "refacturacion": 0,
+                "saldoMesAnterior": 0,
+                "importeInteres": 0,
+                "saldaConCorte": 0,
+                "diasTranscurridos": 129,
+                "porcentajeBonificacionPrestamo": 4566,
+                "porcentajeBonificacion": 0,
+                "interesSobreCompra": 15964,
+                "CuentasDetalle": [],
+                "saldoalafecha": 0,
+                "porcentaje": 0,
+                "flagCuentaCandidata": 0,
+                "convenio": {
+                  "tipocuenta": 0,
+                  "descripcion": "",
+                  "factura": 0,
+                  "tipoconvenio": 0,
+                  "subtipoconvenio": 0,
+                  "fechaconvenio": "",
+                  "plazoconvenio": "",
+                  "importeconvenio": 0,
+                  "efectuoconvenio": 0,
+                  "flagcuentaperdida": 0
+                }
+              }
+            ]
+          },
+          "estado": 0,
+          "token": "33333-33333-33333-33333",
+          "mensaje": "EXITO!"
+        }
+      },
+      "meta": {
+        "id_transaction": "consultarCuentas_v1_endpointnatsddbbbfb9q74gv_cv7j9bot251s73d6aolgc3f1ed57849b45e996412e1b8a94a4f6",
+        "status": "SUCCESS"
+      }
+    }
+  }</con:responseContent></con:response><con:response name="PrestamoVencido" id="dc40aa5e-0b42-45c4-abcc-fe04a925b69c" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "response": {
+      "data": {
+        "response": {
+          "folioAbono": "2503106609000160306",
+          "numeroCliente": 90294695,
+          "nombreCliente": "YESENIA LEONEL VERA",
+          "puntualidad": "A",
+          "cuentas": [
+            {
+              "tipoCuenta": 3,
+              "saldo": 30809,
+              "interesAdicional": 0,
+              "abonoBase": 2201,
+              "vencido": 40000,
+              "minimo": 2200,
+              "bonificacion": 7289,
+              "interesPrimerMes": 0,
+              "saldaCon": 23520,
+              "factura": 45038,
+              "importeVenta": 0,
+              "descripcion": "PRESTAMO                      ",
+              "tienda": 173,
+              "fechaUltimoMovimiento": "2025-03-01",
+              "plazo": 18,
+              "tipoProducto": 0,
+              "saldoTeorico": 23415,
+              "folioOrdenamiento": 5,
+              "importePrestamo": 39615,
+              "fechaPrestamo": "2023-11-15",
+              "flagCuentaPerdida": 0,
+              "porcentajeInteres": 0,
+              "refacturacion": 0,
+              "saldoMesAnterior": 0,
+              "importeInteres": 0,
+              "saldaConCorte": 0,
+              "diasTranscurridos": 129,
+              "porcentajeBonificacionPrestamo": 4566,
+              "porcentajeBonificacion": 0,
+              "interesSobreCompra": 15964,
+              "CuentasDetalle": [],
+              "saldoalafecha": 0,
+              "porcentaje": 0,
+              "flagCuentaCandidata": 0,
+              "convenio": {
+                "tipocuenta": 0,
+                "descripcion": "",
+                "factura": 0,
+                "tipoconvenio": 0,
+                "subtipoconvenio": 0,
+                "fechaconvenio": "",
+                "plazoconvenio": "",
+                "importeconvenio": 0,
+                "efectuoconvenio": 0,
+                "flagcuentaperdida": 0
+              }
+            }
+          ],
+          "data": {
+            "folioAbono": "2503106609000160306",
+            "numeroCliente": 90294695,
+            "nombreCliente": "YESENIA LEONEL VERA",
+            "puntualidad": "A",
+            "cuentas": [
+              {
+                "tipoCuenta": 3,
+                "saldo": 30809,
+                "interesAdicional": 0,
+                "abonoBase": 2201,
+                "vencido": 40000,
+                "minimo": 2200,
+                "bonificacion": 7289,
+                "interesPrimerMes": 0,
+                "saldaCon": 23520,
+                "factura": 45038,
+                "importeVenta": 0,
+                "descripcion": "PRESTAMO                      ",
+                "tienda": 173,
+                "fechaUltimoMovimiento": "2025-03-01",
+                "plazo": 18,
+                "tipoProducto": 0,
+                "saldoTeorico": 23415,
+                "folioOrdenamiento": 5,
+                "importePrestamo": 39615,
+                "fechaPrestamo": "2023-11-15",
+                "flagCuentaPerdida": 0,
+                "porcentajeInteres": 0,
+                "refacturacion": 0,
+                "saldoMesAnterior": 0,
+                "importeInteres": 0,
+                "saldaConCorte": 0,
+                "diasTranscurridos": 129,
+                "porcentajeBonificacionPrestamo": 4566,
+                "porcentajeBonificacion": 0,
+                "interesSobreCompra": 15964,
+                "CuentasDetalle": [],
+                "saldoalafecha": 0,
+                "porcentaje": 0,
+                "flagCuentaCandidata": 0,
+                "convenio": {
+                  "tipocuenta": 0,
+                  "descripcion": "",
+                  "factura": 0,
+                  "tipoconvenio": 0,
+                  "subtipoconvenio": 0,
+                  "fechaconvenio": "",
+                  "plazoconvenio": "",
+                  "importeconvenio": 0,
+                  "efectuoconvenio": 0,
+                  "flagcuentaperdida": 0
+                }
+              }
+            ]
+          },
+          "estado": 0,
+          "token": "44444-44444-44444-44444",
+          "mensaje": "EXITO!"
+        }
+      },
+      "meta": {
+        "id_transaction": "consultarCuentas_v1_endpointnatsddbbbfb9q74gv_cv7j9bot251s73d6aolgc3f1ed57849b45e996412e1b8a94a4f6",
+        "status": "SUCCESS"
+      }
+    }
+  }</con:responseContent></con:response><con:response name="Prestamo" id="69351556-382b-4c1c-af1f-efe767597256" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "response": {
+      "data": {
+        "response": {
+          "folioAbono": "2503106609000160306",
+          "numeroCliente": 90294695,
+          "nombreCliente": "YESENIA LEONEL VERA",
+          "puntualidad": "A",
+          "cuentas": [
+            {
+              "tipoCuenta": 3,
+              "saldo": 30809,
+              "interesAdicional": 0,
+              "abonoBase": 2201,
+              "vencido": 0,
+              "minimo": 2200,
+              "bonificacion": 7289,
+              "interesPrimerMes": 0,
+              "saldaCon": 23520,
+              "factura": 45038,
+              "importeVenta": 0,
+              "descripcion": "PRESTAMO                      ",
+              "tienda": 173,
+              "fechaUltimoMovimiento": "2025-03-01",
+              "plazo": 18,
+              "tipoProducto": 0,
+              "saldoTeorico": 23415,
+              "folioOrdenamiento": 5,
+              "importePrestamo": 39615,
+              "fechaPrestamo": "2025-09-07",
+              "flagCuentaPerdida": 0,
+              "porcentajeInteres": 0,
+              "refacturacion": 0,
+              "saldoMesAnterior": 0,
+              "importeInteres": 0,
+              "saldaConCorte": 0,
+              "diasTranscurridos": 129,
+              "porcentajeBonificacionPrestamo": 4566,
+              "porcentajeBonificacion": 0,
+              "interesSobreCompra": 15964,
+              "CuentasDetalle": [],
+              "saldoalafecha": 0,
+              "porcentaje": 0,
+              "flagCuentaCandidata": 0,
+              "convenio": {
+                "tipocuenta": 0,
+                "descripcion": "",
+                "factura": 0,
+                "tipoconvenio": 0,
+                "subtipoconvenio": 0,
+                "fechaconvenio": "",
+                "plazoconvenio": "",
+                "importeconvenio": 0,
+                "efectuoconvenio": 0,
+                "flagcuentaperdida": 0
+              }
+            }
+          ],
+          "data": {
+            "folioAbono": "2503106609000160306",
+            "numeroCliente": 90294695,
+            "nombreCliente": "YESENIA LEONEL VERA",
+            "puntualidad": "A",
+            "cuentas": [
+              {
+                "tipoCuenta": 3,
+                "saldo": 30809,
+                "interesAdicional": 0,
+                "abonoBase": 2201,
+                "vencido": 0,
+                "minimo": 2200,
+                "bonificacion": 7289,
+                "interesPrimerMes": 0,
+                "saldaCon": 23520,
+                "factura": 45038,
+                "importeVenta": 0,
+                "descripcion": "PRESTAMO                      ",
+                "tienda": 173,
+                "fechaUltimoMovimiento": "2025-03-01",
+                "plazo": 18,
+                "tipoProducto": 0,
+                "saldoTeorico": 23415,
+                "folioOrdenamiento": 5,
+                "importePrestamo": 39615,
+                "fechaPrestamo": "2025-09-07",
+                "flagCuentaPerdida": 0,
+                "porcentajeInteres": 0,
+                "refacturacion": 0,
+                "saldoMesAnterior": 0,
+                "importeInteres": 0,
+                "saldaConCorte": 0,
+                "diasTranscurridos": 129,
+                "porcentajeBonificacionPrestamo": 4566,
+                "porcentajeBonificacion": 0,
+                "interesSobreCompra": 15964,
+                "CuentasDetalle": [],
+                "saldoalafecha": 0,
+                "porcentaje": 0,
+                "flagCuentaCandidata": 0,
+                "convenio": {
+                  "tipocuenta": 0,
+                  "descripcion": "",
+                  "factura": 0,
+                  "tipoconvenio": 0,
+                  "subtipoconvenio": 0,
+                  "fechaconvenio": "",
+                  "plazoconvenio": "",
+                  "importeconvenio": 0,
+                  "efectuoconvenio": 0,
+                  "flagcuentaperdida": 0
+                }
+              }
+            ]
+          },
+          "estado": 0,
+          "token": "53682029",
+          "mensaje": "EXITO!"
+        }
+      },
+      "meta": {
+        "id_transaction": "consultarCuentas_v1_endpointnatsddbbbfb9q74gv_cv7j9bot251s73d6aolgc3f1ed57849b45e996412e1b8a94a4f6",
+        "status": "SUCCESS"
+      }
+    }
+  }</con:responseContent></con:response></con:restMockAction></con:restMockService><con:restMockService id="bc5ccbc0-d20e-4460-bcfc-e1a9979390b8" port="8080" path="/" host="DAR90387590L" name="finalizarAbono"><con:settings/><con:properties/><con:restMockAction name="/omnicanal/api/v1/finalizarAbono" method="POST" resourcePath="/omnicanal/api/v1/finalizarAbono" id="7b667d74-2ed7-4d88-8f98-4b7b2ee5be7e"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+*/&#13;
+</con:dispatchPath><con:response name="SUCCESS" id="834d7408-a0dc-4707-9474-c63a76dd6bcb" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+    "data":{
+        "response":
+        {
+            "subFolio": 3564584,
+            "meta":{
+                "transactionID":"13e8360c-ba45-40d5-b4ca-10d379bb2d48",
+                "status": "OK",
+                "statusCode": 200,
+                "timestamp": "2024-06-17 13:46:13.559",
+                "statusApp": 0,
+                "message": "EXITO!",
+                "token": "26199847",
+                "timeDuration": "83 ms"
+            },
+            "data":{
+                "subFolio": 3564584
+            },
+            "estado": 0,
+            "token": "26199847",
+            "mensaje": "EXITO!",
+            "fecha": "17/06/24"
+        }
+
+    },
+        "meta":{
+            "id_transaction": "4dbd66b7-2506-4ef6-96d0-3f52d4bb8000",
+            "status": "SUCCESS",
+            "time_elapsed": 0.9300196170806885
+        }
+}</con:responseContent></con:response></con:restMockAction></con:restMockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
