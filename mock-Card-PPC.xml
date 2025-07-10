@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="9122a6f5-ef0b-4a97-b474-483a97d9e27b" activeEnvironment="Default" name="mockCardPPC" resourceRoot="" defaultScriptLanguage="Groovy" soapui-version="5.8.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:restMockService id="fb9c82fe-f42d-4049-94e0-0ec0ef3ef6de" port="8080" path="/" host="DAR90387590L" name="inicioSesionAbonos"><con:settings/><con:properties/><con:restMockAction name="/omnicanal/api/v1/inicioSesionAbonos" method="POST" resourcePath="/omnicanal/api/v1/inicioSesionAbonos" id="6e56369c-d2aa-4372-8d57-5bef477b948f"><con:settings/><con:defaultResponse>SUCCESS</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>// Match based on body
+<con:soapui-project id="9122a6f5-ef0b-4a97-b474-483a97d9e27b" activeEnvironment="Default" name="mockCardPPC" resourceRoot="${projectDir}" defaultScriptLanguage="Groovy" soapui-version="5.8.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:restMockService id="fb9c82fe-f42d-4049-94e0-0ec0ef3ef6de" port="8080" path="/" host="DAR90387590L" name="Abonos"><con:settings/><con:properties/><con:restMockAction name="/omnicanal/api/v1/inicioSesionAbonos" method="POST" resourcePath="/omnicanal/api/v1/inicioSesionAbonos" id="6e56369c-d2aa-4372-8d57-5bef477b948f"><con:settings/><con:defaultResponse>SUCCESS</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>// Match based on body
 def requestBody = mockRequest.getRequestContent()
 log.info "Request body: " + requestBody
 
@@ -287,8 +287,10 @@ if( requestBody.contains("00000") )
         "status": "SUCCESS",
         "time_elapsed": 0.32446837425231934
     }
-}</con:responseContent></con:response></con:restMockAction></con:restMockService><con:restMockService id="90014214-fcfa-426e-ae7f-b803e4ea298e" port="8080" path="/" host="DAR90387590L" name="consultarCuentas"><con:settings/><con:properties/><con:restMockAction name="/omnicanal/api/v1/consultarCuentas" method="POST" resourcePath="/omnicanal/api/v1/consultarCuentas" id="adbd7808-17cc-4d69-9271-ad485c52612e"><con:settings/><con:defaultResponse>variasconPPC</con:defaultResponse><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>def authorizationHeader = mockRequest.getRequestHeaders().get("Authorization")
+}</con:responseContent></con:response></con:restMockAction><con:restMockAction name="/omnicanal/api/v1/consultarCuentas" method="POST" resourcePath="/omnicanal/api/v1/consultarCuentas" id="5855412f-7d13-4e29-8a85-febc1cb87b1b"><con:settings/><con:defaultResponse xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:dispatchStyle>SCRIPT</con:dispatchStyle><con:dispatchPath>// Match based on header
+def authorizationHeader = mockRequest.getRequestHeaders().get("Authorization")
 log.info "Authorization: " + authorizationHeader
+
 
 if( authorizationHeader.contains("9-9-9-9") )
 {
@@ -314,7 +316,8 @@ if( authorizationHeader.contains("9-9-9-9") )
     return "PrestamoVencido"
 }else if(authorizationHeader.contains("55555-55555-55555-55555")){
     return "Prestamo"
-}</con:dispatchPath><con:response name="ERROR9" id="a0d10cb1-c278-4899-b937-2145af999e56" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+}
+</con:dispatchPath><con:response name="ERROR9" id="7e57256b-8f97-4d54-aafa-64677427d2d2" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
     "data":{
         "response":{
             "hostname": "consultarcuentas-764c69475b-zpjgv",
@@ -328,7 +331,7 @@ if( authorizationHeader.contains("9-9-9-9") )
         "status": "ERROR",
         "time_elapsed": 0.1386871337890625
     }
-}</con:responseContent></con:response><con:response name="ERROR12" id="5410bb8d-3218-4d0c-beef-f0f06bb5d663" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+}</con:responseContent></con:response><con:response name="ERROR12" id="36f655c6-2bd4-48d4-ac60-d6c67b66cc89" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
     "data":{
         "response":{
             "hostname": "consultarcuentas-764c69475b-zpjgv",
@@ -342,7 +345,7 @@ if( authorizationHeader.contains("9-9-9-9") )
         "status": "ERROR",
         "time_elapsed": 0.1386871337890625
     }
-}</con:responseContent></con:response><con:response name="ERROR53" id="c46aba2e-e4e2-4667-bf34-c2fbe4e3490f" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+}</con:responseContent></con:response><con:response name="ERROR53" id="a6786701-271f-4987-8754-a9008ba74748" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
     "data":{
         "response":{
             "hostname": "consultarcuentas-764c69475b-zpjgv",
@@ -356,7 +359,7 @@ if( authorizationHeader.contains("9-9-9-9") )
         "status": "ERROR",
         "time_elapsed": 0.1386871337890625
     }
-}</con:responseContent></con:response><con:response name="ERROR10" id="a4e31512-03e8-4d36-b36b-eeb488cec7a0" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+}</con:responseContent></con:response><con:response name="ERROR10" id="dd8c659a-5203-453d-bbfd-2c32a58c00ac" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
     "data":{
         "response":{
             "hostname": "consultarcuentas-764c69475b-zpjgv",
@@ -370,7 +373,7 @@ if( authorizationHeader.contains("9-9-9-9") )
         "status": "ERROR",
         "time_elapsed": 0.1386871337890625
     }
-}</con:responseContent></con:response><con:response name="ERROR11" id="2e26934a-9914-4c0b-9d60-4b7dbf0dd892" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+}</con:responseContent></con:response><con:response name="ERROR11" id="ddbd6261-da06-4442-b987-3e0aecbf794f" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
     "data":{
         "response":{
             "hostname": "consultarcuentas-764c69475b-zpjgv",
@@ -384,7 +387,7 @@ if( authorizationHeader.contains("9-9-9-9") )
         "status": "ERROR",
         "time_elapsed": 0.1386871337890625
     }
-}</con:responseContent></con:response><con:response name="ERROR3" id="5742a324-ce6f-4920-af61-4d20d13014bf" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+}</con:responseContent></con:response><con:response name="ERROR3" id="9321d19a-70b0-40c5-9ed4-cfdd54a53752" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
     "data":{
         "response":{
             "hostname": "consultarcuentas-764c69475b-zpjgv",
@@ -398,7 +401,7 @@ if( authorizationHeader.contains("9-9-9-9") )
         "status": "ERROR",
         "time_elapsed": 0.1386871337890625
     }
-}</con:responseContent></con:response><con:response name="variasconPPC" id="20f3ce5d-c8f4-4f96-8b86-1c16db092cdf" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+}</con:responseContent></con:response><con:response name="variasconPPC" id="02fbb69a-a771-490b-aa46-e178841656ea" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
     "response": {
       "data": {
         "response": {
@@ -939,7 +942,7 @@ if( authorizationHeader.contains("9-9-9-9") )
         "status": "SUCCESS"
       }
     }
-  }</con:responseContent></con:response><con:response name="variasSinPPC" id="2efbd8a0-93aa-47d8-8e80-5843869d21fb" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+  }</con:responseContent></con:response><con:response name="variasSinPPC" id="9a7fe68e-5cf5-4316-8885-d77c2081576f" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
     "response": {
       "data": {
         "response": {
@@ -1385,7 +1388,7 @@ if( authorizationHeader.contains("9-9-9-9") )
         "status": "SUCCESS"
       }
     }
-  }</con:responseContent></con:response><con:response name="variasconPPCVencido" id="58427ac4-fc3e-4b5f-b44b-f8cd9f35b574" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+  }</con:responseContent></con:response><con:response name="variasconPPCVencido" id="88fccff2-986e-4d9e-a6f3-1634676e7ac1" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
     "response": {
       "data": {
         "response": {
@@ -1508,7 +1511,7 @@ if( authorizationHeader.contains("9-9-9-9") )
               "saldo": 30809,
               "interesAdicional": 0,
               "abonoBase": 2201,
-              "vencido": 32000,
+              "vencido": 255,
               "minimo": 2200,
               "bonificacion": 7289,
               "interesPrimerMes": 0,
@@ -1672,7 +1675,7 @@ if( authorizationHeader.contains("9-9-9-9") )
                 "saldo": 30809,
                 "interesAdicional": 0,
                 "abonoBase": 2201,
-                "vencido": 32000,
+                "vencido": 255,
                 "minimo": 2200,
                 "bonificacion": 7289,
                 "interesPrimerMes": 0,
@@ -1727,7 +1730,7 @@ if( authorizationHeader.contains("9-9-9-9") )
         "status": "SUCCESS"
       }
     }
-  }</con:responseContent></con:response><con:response name="PrestamoVencido" id="dc40aa5e-0b42-45c4-abcc-fe04a925b69c" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+  }</con:responseContent></con:response><con:response name="PrestamoVencido" id="73fc14c4-7c33-404c-b0f2-55ad96a027ff" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
     "response": {
       "data": {
         "response": {
@@ -1741,7 +1744,7 @@ if( authorizationHeader.contains("9-9-9-9") )
               "saldo": 30809,
               "interesAdicional": 0,
               "abonoBase": 2201,
-              "vencido": 40000,
+              "vencido": 500,
               "minimo": 2200,
               "bonificacion": 7289,
               "interesPrimerMes": 0,
@@ -1796,7 +1799,7 @@ if( authorizationHeader.contains("9-9-9-9") )
                 "saldo": 30809,
                 "interesAdicional": 0,
                 "abonoBase": 2201,
-                "vencido": 40000,
+                "vencido": 500,
                 "minimo": 2200,
                 "bonificacion": 7289,
                 "interesPrimerMes": 0,
@@ -1851,7 +1854,7 @@ if( authorizationHeader.contains("9-9-9-9") )
         "status": "SUCCESS"
       }
     }
-  }</con:responseContent></con:response><con:response name="Prestamo" id="69351556-382b-4c1c-af1f-efe767597256" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+  }</con:responseContent></con:response><con:response name="Prestamo" id="8fe23efc-0675-4314-a251-7f206b66b962" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
     "response": {
       "data": {
         "response": {
@@ -1975,7 +1978,7 @@ if( authorizationHeader.contains("9-9-9-9") )
         "status": "SUCCESS"
       }
     }
-  }</con:responseContent></con:response></con:restMockAction></con:restMockService><con:restMockService id="bc5ccbc0-d20e-4460-bcfc-e1a9979390b8" port="8080" path="/" host="DAR90387590L" name="finalizarAbono"><con:settings/><con:properties/><con:restMockAction name="/omnicanal/api/v1/finalizarAbono" method="POST" resourcePath="/omnicanal/api/v1/finalizarAbono" id="7b667d74-2ed7-4d88-8f98-4b7b2ee5be7e"><con:settings/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+  }</con:responseContent></con:response></con:restMockAction><con:restMockAction name="/omnicanal/api/v1/finalizarAbono" method="POST" resourcePath="/omnicanal/api/v1/finalizarAbono" id="076eac5a-f3c4-476f-bb07-3843828e9164"><con:settings/><con:defaultResponse>SUCCESS</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
 // Script dispatcher is used to select a response based on the incoming request.&#13;
 // Here are few examples showing how to match based on path, query param, header and body&#13;
 &#13;
@@ -2027,7 +2030,7 @@ if( requestBody.contains("some data") )&#13;
     return "Response N"&#13;
 }&#13;
 */&#13;
-</con:dispatchPath><con:response name="SUCCESS" id="834d7408-a0dc-4707-9474-c63a76dd6bcb" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
+</con:dispatchPath><con:response name="SUCCESS" id="62aa6ed0-6695-4f3d-9722-05c9ac7ff891" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>{
     "data":{
         "response":
         {
